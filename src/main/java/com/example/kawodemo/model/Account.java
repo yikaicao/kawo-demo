@@ -1,5 +1,8 @@
 package com.example.kawodemo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.mongodb.lang.NonNull;
 import java.util.Date;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedBy;
@@ -22,10 +25,13 @@ public class Account {
     @Id
     @Indexed(unique = true)
     private String id;
+    @NonNull
     private String network;
-    private String networkId;
+    @NonNull
+    private String networkUserId;
     private long viewCount;
     private long likeCount;
+    @JsonProperty(access = Access.WRITE_ONLY)
     private boolean needsUpdate;
 
 }

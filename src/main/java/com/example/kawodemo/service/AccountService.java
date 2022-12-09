@@ -2,7 +2,8 @@ package com.example.kawodemo.service;
 
 import com.example.kawodemo.model.Account;
 import com.example.kawodemo.model.AccountRepository;
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,11 +14,11 @@ public class AccountService {
     public AccountService(
         AccountRepository accountRepository) {this.accountRepository = accountRepository;}
 
-    public void insertAccount(Account account) {
-        accountRepository.insert(account);
+    public Account insertAccount(Account account) {
+        return accountRepository.insert(account);
     }
 
-    public List<Account> findAll() {
-        return accountRepository.findAll();
+    public Page<Account> find(Pageable pageable) {
+        return accountRepository.findAll(pageable);
     }
 }
