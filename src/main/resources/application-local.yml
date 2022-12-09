@@ -1,0 +1,4 @@
+management:endpoints:web:exposure:include: '*'
+open:
+  bilibili:
+    client-id: '5581fbd51be54851'
