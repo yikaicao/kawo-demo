@@ -12,4 +12,7 @@ public class KawoDemoApplication {
         SpringApplication.run(KawoDemoApplication.class, args);
     }
 
+    //TODO user auth
+    //TODO finalize account model, post+stats model
+
 }
